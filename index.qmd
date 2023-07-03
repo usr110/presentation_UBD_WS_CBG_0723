@@ -1,0 +1,77 @@
+---
+title: "Microsimulation and Lifetable Modelling"
+subtitle: Short URL = https://t.ly/z5SO
+author: "Ali Abbas"
+date: 07/07/2023
+date-format: long
+institute: MRC-Epidemiology Unit, University of Cambridge
+format: 
+  revealjs: 
+    embed-resources: true
+    slide-number: c/t #< collapsed/total
+    logo: "img/4261_UKRI_MRC_EU Cambridge_RGB.svg" #https://www.mrc-epid.cam.ac.uk/wp-content/uploads/2021/10/colour-epi-logo.png"
+    css: ["theme/theme.css"]
+    theme: [serif, theme/custom.scss]
+    incremental: true
+    width: 1920
+    height: 1080
+    header: Access the presentation by using https://t.ly/z5SO
+editor: source
+filters:
+  - reveal-header
+execute: 
+  size: "huge"
+---
+
+# Structure
+
+## Agenda
+
+-   Why Modelling?
+-   Microsimulation
+-   LifeTable Modelling
+-   Summary
+
+## Modelling
+
+-   Represent complexity of the real world in a simple form
+-   Experiments are not possible or feasible (e.g. randomised control trials in the medical field)
+-   Explore alternative scenarios consequences
+-   Trials are short (intermediate end-points), need for extrapolation Cholesterol levels (trial) to heart disease (model)
+-   Generalising to other settings (age groups, country)
+-   Synthetising data from various sources
+-   Informing decisions in the absence of hard data (Covid!)
+
+## Microsimulation
+
+-   Modelling technique operates at individual level (such as persons, households, vehicles, or firms)
+-   Estimates how demographic, behavioral, and policy changes might affect individual outcomes; also
+-   To better understand the effects of current policies
+
+|                                  |                                |
+|----------------------------------|--------------------------------|
+| ![](img/aggregated_approach.png) | ![](img/microsim_approach.png) |
+
+## Example - Transport PM 2.5 for Munich
+
+![](img/sim_pm2.5_munich.png)
+
+## How it differs
+
+-   Microsimulation models operate at the level of individual units such as persons, households, vehicles, or firms, whereas aggregate models represent collective properties
+-   Each unit in microsimulation models is treated as an autonomous entity, and the interaction of the units is allowed to vary depending on stochastic (randomized) parameters that represent individual preferences and tendencies
+-   Microsimulation models simulate large representative populations of these low-level entities to draw conclusions that apply to higher levels of aggregation such as an entire country
+-   Microsimulation models are used to estimate how demographic, behavioral, and policy changes might affect individual outcomes and to better understand the effects of current policies
+-   Microsimulation models are explorative tools that can be used for explanation or prediction
+-   Microsimulation models can simulate the effects of very fine-grained as well as broader policy changes3
+-   Microsimulation models can be resource-intensive to develop and apply, and difficult to understand and evaluate because they must usually meld together a variety of data and research results of varying degrees of quality and, in the process, make many unsupported assumptions .
+
+In summary, microsimulation is a unique modeling technique that allows for the simulation of individual units and their interactions, providing a more detailed and nuanced understanding of the effects of policies and other changes.
+
+## Lifetable Modelling
+
+-   Two states model: alive and dead
+-   Outcomes: life years, health-adjusted life years, life expectancy.
+
+
+![](img/lifetable_prob.png)
