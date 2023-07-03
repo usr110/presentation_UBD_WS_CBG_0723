@@ -68,10 +68,17 @@ execute:
 
 In summary, microsimulation is a unique modeling technique that allows for the simulation of individual units and their interactions, providing a more detailed and nuanced understanding of the effects of policies and other changes.
 
+## Tutorial paper
+
+[![](img/micro_paper.png)](https://doi.org/10.1177/0272989x18754513)
+
+[Krijkamp, Eline M., et al. "Microsimulation modeling for health decision sciences using R: a tutorial." Medical Decision Making 38.3 (2018): 400-422](https://doi.org/10.1177/0272989x18754513)
+
 ## Lifetable Modelling
 
 -   Two states model: alive and dead
 -   Outcomes: life years, health-adjusted life years, life expectancy.
 
-
 ![](img/lifetable_prob.png)
+
+## 
