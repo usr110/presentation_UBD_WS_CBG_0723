@@ -1,3 +1,11 @@
 .reveal .slides > section > section { 
   text-align:left; 
 }
+
+/*
+.reveal .slide-logo {
+  height: 100px !important;
+  width: 100px!important;
+  max-width: 500px !important;
+  max-height: 400px !important;
+}*/

@@ -9,13 +9,15 @@ format:
   revealjs: 
     embed-resources: true
     slide-number: c/t #< collapsed/total
-    logo: "img/4261_UKRI_MRC_EU Cambridge_RGB.svg" #https://www.mrc-epid.cam.ac.uk/wp-content/uploads/2021/10/colour-epi-logo.png"
+    logo: "img/4261_UKRI_MRC_EU Cambridge_RGB.svg"
     css: ["theme/theme.css"]
     theme: [serif, theme/custom.scss]
     incremental: true
     width: 1920
     height: 1080
-    header: Access the presentation by using https://t.ly/z5SO
+    header: asdadadad https://t.ly/z5SO
+    sc-sb-title: true
+    subtitle-as-header: true
 editor: source
 filters:
   - reveal-header
@@ -29,32 +31,48 @@ execute:
 
 -   Why Modelling?
 -   Microsimulation
--   LifeTable Modelling
+-   Lifetable Modelling
 -   Summary
 
-## Modelling
+## Why Modelling
 
--   Represent complexity of the real world in a simple form
--   Experiments are not possible or feasible (e.g. randomised control trials in the medical field)
+-   Simple representation of complexity
+-   Experiments are not possible or feasible (e.g. randomised control trials)
 -   Explore alternative scenarios consequences
 -   Trials are short (intermediate end-points), need for extrapolation Cholesterol levels (trial) to heart disease (model)
--   Generalising to other settings (age groups, country)
--   Synthetising data from various sources
+-   Generalisable to other settings (age groups, country)
+-   Synthesizing data from various sources
 -   Informing decisions in the absence of hard data (Covid!)
 
-## Microsimulation
+# Microsimulation
 
+## Definition - Microsimulation {.scrollable .smaller}
+
+::: {.fragment fragment-index="1"}
 -   Modelling technique operates at individual level (such as persons, households, vehicles, or firms)
 -   Estimates how demographic, behavioral, and policy changes might affect individual outcomes; also
 -   To better understand the effects of current policies
+:::
 
+::: {.fragment fragment-index="2"}
 |                                  |                                |
 |----------------------------------|--------------------------------|
 | ![](img/aggregated_approach.png) | ![](img/microsim_approach.png) |
+:::
 
 ## Example - Transport PM 2.5 for Munich
 
 ![](img/sim_pm2.5_munich.png)
+
+<!-- ::: footer -->
+<!-- Learn more: [Executable Code](https://quarto.org/docs/presentations/revealjs/#executable-code) -->
+<!-- ::: -->
+
+~~~
+.inverse-header {
+  color: #c1c1c1 !important;
+}
+~~~
 
 ## How it differs
 
@@ -74,11 +92,44 @@ In summary, microsimulation is a unique modeling technique that allows for the s
 
 [Krijkamp, Eline M., et al. "Microsimulation modeling for health decision sciences using R: a tutorial." Medical Decision Making 38.3 (2018): 400-422](https://doi.org/10.1177/0272989x18754513)
 
-## Lifetable Modelling
+# Lifetable Modelling
+
+## Definition - Lifetable Modelling
 
 -   Two states model: alive and dead
--   Outcomes: life years, health-adjusted life years, life expectancy.
+-   Outcomes: life years, and life expectancy.
 
 ![](img/lifetable_prob.png)
 
-## 
+## I/O
+
+-   **Inputs**: Mortality rates
+-   **Depicts**: Life expectancy at different ages
+-   **Period life tables**: individuals exposed over hypothetical life course to mortality rates observed in one calendar year
+-   **Projected mortality rates**: Simulation relies on *cohort life tables*
+
+## Source of Inputs
+
+-   All-cause mortality rate: National Statistics offices/Global Burden of Disease Study
+
+-   All-cause mortality rate trends: National Statistics offices
+
+-   Population for each cohort (can also be 100,000 or similar figure)
+
+## Two-state lifetable model (1/3)
+
+![](img/two_state_transition_prob1.jpg)
+
+## Two-state lifetable model (2/3)
+
+![](img/two_state_transition_prob2a.jpg)
+
+## Two-state lifetable model (3/3)
+
+-   Average life years without intervention: 6,362
+
+-   Average life years without intervention: 7,005
+
+-   Life years gained (undiscounted): 643 (7,005 - 6,362)
+
+-   Caveat: Probability of dying increases with age
