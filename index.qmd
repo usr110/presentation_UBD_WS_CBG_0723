@@ -1,6 +1,6 @@
 ---
 title: "Microsimulation and Lifetable Modelling"
-subtitle: Short URL = https://t.ly/z5SO
+subtitle: Access at https://t.ly/z5SO
 author: "Ali Abbas"
 date: 07/07/2023
 date-format: long
@@ -15,7 +15,7 @@ format:
     incremental: true
     width: 1920
     height: 1080
-    header: asdadadad https://t.ly/z5SO
+    header: Access at https://t.ly/Dki4A
     sc-sb-title: true
     subtitle-as-header: true
 editor: source
@@ -30,61 +30,83 @@ execute:
 ## Agenda
 
 -   Why Modelling?
--   Microsimulation
+-   Microsimulation Modelling
 -   Lifetable Modelling
 -   Summary
 
-## Why Modelling
+# Modelling
 
--   Simple representation of complexity
+## Why Modelling? (1/2)
+
+-   Simple representation of complex world/phenomena
 -   Experiments are not possible or feasible (e.g. randomised control trials)
--   Explore alternative scenarios consequences
+-   Explore alternative consequences using scenarios
 -   Trials are short (intermediate end-points), need for extrapolation Cholesterol levels (trial) to heart disease (model)
 -   Generalisable to other settings (age groups, country)
 -   Synthesizing data from various sources
--   Informing decisions in the absence of hard data (Covid!)
+-   Informing decisions in the absence of hard data (recent pandemic)
+
+## Why Modelling? (2/2)
+
+[![Courtesy: Randall Monroe, xkcd: \<https://xkcd.com/1838\>](img/machine_learning_2x.png)](https://xkcd.com/1838/)
 
 # Microsimulation
 
-## Definition - Microsimulation {.scrollable .smaller}
+## Definition {.scrollable .smaller}
 
-::: {.fragment fragment-index="1"}
 -   Modelling technique operates at individual level (such as persons, households, vehicles, or firms)
--   Estimates how demographic, behavioral, and policy changes might affect individual outcomes; also
--   To better understand the effects of current policies
-:::
 
-::: {.fragment fragment-index="2"}
-|                                  |                                |
-|----------------------------------|--------------------------------|
-| ![](img/aggregated_approach.png) | ![](img/microsim_approach.png) |
-:::
+-   Estimates how demographic, behavioral, and policy changes might affect individual outcomes; also
+
+-   To better understand the effects of current policies
+
+-   ![](img/aggregated_approach.png) \| ![](img/microsim_approach.png) \|
 
 ## Example - Transport PM 2.5 for Munich
 
 ![](img/sim_pm2.5_munich.png)
 
-<!-- ::: footer -->
-<!-- Learn more: [Executable Code](https://quarto.org/docs/presentations/revealjs/#executable-code) -->
-<!-- ::: -->
+## How it differs from traditional models?
 
-~~~
-.inverse-header {
-  color: #c1c1c1 !important;
-}
-~~~
+-   Individual level (such as persons, households, vehicles, or firms)
 
-## How it differs
+-   Autonomous entity - with limited learning/adaptability abilities
 
--   Microsimulation models operate at the level of individual units such as persons, households, vehicles, or firms, whereas aggregate models represent collective properties
--   Each unit in microsimulation models is treated as an autonomous entity, and the interaction of the units is allowed to vary depending on stochastic (randomized) parameters that represent individual preferences and tendencies
--   Microsimulation models simulate large representative populations of these low-level entities to draw conclusions that apply to higher levels of aggregation such as an entire country
--   Microsimulation models are used to estimate how demographic, behavioral, and policy changes might affect individual outcomes and to better understand the effects of current policies
--   Microsimulation models are explorative tools that can be used for explanation or prediction
--   Microsimulation models can simulate the effects of very fine-grained as well as broader policy changes3
--   Microsimulation models can be resource-intensive to develop and apply, and difficult to understand and evaluate because they must usually meld together a variety of data and research results of varying degrees of quality and, in the process, make many unsupported assumptions .
+-   Local interactions impact macro/aggregate levels
 
-In summary, microsimulation is a unique modeling technique that allows for the simulation of individual units and their interactions, providing a more detailed and nuanced understanding of the effects of policies and other changes.
+-   Explorative that can be used for explanation or prediction
+
+-   Resource intensive - even with sample population
+
+-   Nuanced understanding
+
+## Ingredients
+
+-   Synthetic Population[^1]
+
+    ![](img/ipf.png)
+
+-   Social/physical space
+
+-   Rules of engagement with other actors/environment
+
+[^1]: Moeckel, R., Spiekermann, K., & Wegener, M. (2003, May). Creating a synthetic population. In Proceedings of the 8th international conference on computers in urban planning and urban management (CUPUM) (pp. 1-18).
+
+## Synthetic Population
+
+-   Census population
+
+-   Localized prediction model based on the most recent Census
+
+-   Surveys (like a travel or Physical Activity Survey)
+
+## Examples - using Bogota (1/2)
+
+![](img/bogota_pop.png)
+
+## Examples - using Bogota (2/2)
+
+![](img/bogota_gender.png)
 
 ## Tutorial paper
 
@@ -101,14 +123,14 @@ In summary, microsimulation is a unique modeling technique that allows for the s
 
 ![](img/lifetable_prob.png)
 
-## I/O
+## Input/Outputs
 
 -   **Inputs**: Mortality rates
 -   **Depicts**: Life expectancy at different ages
 -   **Period life tables**: individuals exposed over hypothetical life course to mortality rates observed in one calendar year
 -   **Projected mortality rates**: Simulation relies on *cohort life tables*
 
-## Source of Inputs
+## Source of Input Datasets
 
 -   All-cause mortality rate: National Statistics offices/Global Burden of Disease Study
 
@@ -130,6 +152,48 @@ In summary, microsimulation is a unique modeling technique that allows for the s
 
 -   Average life years without intervention: 7,005
 
--   Life years gained (undiscounted): 643 (7,005 - 6,362)
+-   Life years gained: 643 (7,005 - 6,362)
 
--   Caveat: Probability of dying increases with age
+-   Caveat
+
+    -   Probability of dying increases with age
+
+    -   Morbidity is captured by proportional multi-state lifetable models
+
+# Summary
+
+-   Microsimulation
+
+    -   Pros:
+
+        -   Large state spaces and captures diversity/heterogeneity on number of variables
+
+        -   May incorporate expert opinions
+
+    -   Cons:
+
+        -   Technologically challenging and resource intensive
+
+        -   (Yet) unsupported assumptions
+
+-   Lifetable Modelling
+
+    -   Pros
+
+        -   Relatively easy to set up
+
+        -   Comparatively low data requirements and easier to justify using Cost Benefit Analysis
+
+    -   Cons
+
+        -   Only mortality modelling
+
+        -   Typically based on annual rates
+
+## References
+
+1)  Veerman JL, Barendregt JJ,Mackenbach JP Quantitative health impact assessment: current practice and future directions Journal of Epidemiology & Community Health 2005;59:361-370.
+2)  Briggs, A.D.M., Wolstenholme, J., Blakely, T. et al. Choosing an epidemiological model structure for the economic evaluation of non-communicable disease public health interventions. Popul Health Metrics 14, 17 (2016). https://doi.org/10.1186/s12963-016-0085-1
+3)  Blakely, T., et al. (2020). Multistate lifetable modelling of preventive interventions: concepts, code and worked examples.
+4)  Barendregt, J. J., et al. (1998). "Coping with multiple morbidity in a life table." Math Popul Stud 7(1): 29-49.
+5)  Moeckel, R., Spiekermann, K., & Wegener, M. (2003, May). Creating a synthetic population. In Proceedings of the 8th international conference on computers in urban planning and urban management (CUPUM) (pp. 1-18).
