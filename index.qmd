@@ -41,7 +41,8 @@ execute:
 -   Simple representation of complex world/phenomena
 -   Experiments are not possible or feasible (e.g. randomised control trials)
 -   Explore alternative consequences using scenarios
--   Trials are short (intermediate end-points), need for extrapolation Cholesterol levels (trial) to heart disease (model)
+-   Trials are short (intermediate end-points), need for extrapolation
+    -   Cholesterol levels (trial) to heart disease (model)
 -   Generalisable to other settings (age groups, country)
 -   Synthesizing data from various sources
 -   Informing decisions in the absence of hard data (recent pandemic)
